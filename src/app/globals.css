@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Fredoka:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+:root {
+  --charcoal: #14110F;
+  --ember: #E4572E;
+  --mustard: #F2B33D;
+  --smoke-beige: #EDE6DB;
+  --pickle-green: #6B8F3A;
+}
+
+@theme {
+  --color-charcoal: #14110F;
+  --color-ember: #E4572E;
+  --color-mustard: #F2B33D;
+  --color-smoke-beige: #EDE6DB;
+  --color-pickle-green: #6B8F3A;
+
+  --font-display: var(--font-flame);
+  --font-body: var(--font-flame-sans);
+  --font-flame: var(--font-flame);
+  --font-flame-sans: var(--font-flame-sans);
+}
+
+html,
+body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+body {
+  font-family: var(--font-flame-sans), "Fredoka", sans-serif;
+  background-color: #EDE6DB;
+  color: #14110F;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Primary Brand Display Font (Flame / Bagel Fat One) */
+.font-flame,
+.font-display {
+  font-family: var(--font-flame), "Bagel Fat One", cursive, sans-serif !important;
+  font-weight: 400 !important;
+  font-synthesis: none;
+  line-height: 0.85;
+}
+
+/* Primary Brand Body/Sans Font (Flame Sans / Fredoka) */
+.font-flame-sans,
+.font-body {
+  font-family: var(--font-flame-sans), "Fredoka", sans-serif !important;
+}
+
+/* Outline Styles for Display Headlines */
+.text-outline-charcoal {
+  -webkit-text-stroke: 2.5px #14110F;
+  color: transparent;
+  paint-order: stroke fill;
+}
+
+.text-outline-smoke {
+  -webkit-text-stroke: 2.5px #EDE6DB;
+  color: transparent;
+  paint-order: stroke fill;
+}
+
+.text-outline-ember {
+  -webkit-text-stroke: 2.5px #E4572E;
+  color: transparent;
+  paint-order: stroke fill;
+}
+
+.text-outline-mustard {
+  -webkit-text-stroke: 2.5px #F2B33D;
+  color: transparent;
+  paint-order: stroke fill;
+}
+
+/* Punch Notches for Menu Cards */
+.dish-notch-left,
+.ticket-notch-left {
+  position: absolute;
+  top: 50%;
+  left: -12px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 9999px;
+  background-color: #14110F;
+  pointer-events: none;
+}
+
+.dish-notch-right,
+.ticket-notch-right {
+  position: absolute;
+  top: 50%;
+  right: -12px;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 9999px;
+  background-color: #14110F;
+  pointer-events: none;
+}
+
+/* Lenis Scroll Styles */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Canvas Multi-Layer Blending */
+canvas {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  display: block;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #14110F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E4572E;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F2B33D;
+}
+
+/* No Scrollbar Utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Pure CSS Marquee Animations - Transform only with translate3d */
+@keyframes marquee-track {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee-left {
+  animation: marquee-track 30s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-right {
+  animation: marquee-track 30s linear infinite reverse;
+  will-change: transform;
+}
+
+.animate-marquee-testimonials-1 {
+  animation: marquee-track 40s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-testimonials-2 {
+  animation: marquee-track 48s linear infinite reverse;
+  will-change: transform;
+}
+
+.pause-hover:hover {
+  animation-play-state: paused;
+}
+
+/* Continuous Dual-Layer Wave Keyframes - Transform only with translate3d */
+@keyframes wave-flow-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes wave-flow-right {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes wave-bob {
+  0% {
+    transform: translate3d(0, -6px, 0);
+  }
+  100% {
+    transform: translate3d(0, 6px, 0);
+  }
+}
+
+.animate-wave-back {
+  animation: wave-flow-left 14s linear infinite;
+  will-change: transform;
+}
+
+.animate-wave-front {
+  animation: wave-flow-right 9s linear infinite;
+  will-change: transform;
+}
+
+.animate-wave-bob {
+  animation: wave-bob 4s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* Touch Devices: hide custom cursor and default cursor fallback */
+@media (hover: none) and (pointer: coarse) {
+  #custom-cursor {
+    display: none !important;
+  }
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-marquee-left,
+  .animate-marquee-right,
+  .animate-marquee-testimonials-1,
+  .animate-marquee-testimonials-2,
+  .animate-wave-back,
+  .animate-wave-front,
+  .animate-wave-bob {
+    animation: none !important;
+  }
+}
